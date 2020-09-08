@@ -1,0 +1,36 @@
+<mat-card class="Login-card">
+  <mat-card-header>
+    <mat-card-title>Log-In</mat-card-title>
+    <mat-card-subtitle>*Enter your login creds..</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- The form goes here -->
+    <form [formGroup]="logInForm" class="row logInForm ">
+      <!-- Form elements are here -->
+      <mat-form-field class="col-md-10 col-offset-md-2" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter your username here." formControlName="username" required>
+        <mat-icon matPrefix>account_circle</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class=" col-md-10 col-offset-md-2" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Enter your password here." type="password" formControlName="password" required>
+        <mat-icon matPrefix> vpn_key</mat-icon>
+      </mat-form-field>
+
+      <div class="col-md-6 col-xs-6 col-sm-6">
+        <mat-card-actions class="float-md-right">
+          <button class="large" mat-raised-button (click)="logInUser(logInForm)"
+            [disabled]="logInForm.invalid" color="success">Log In</button>
+        </mat-card-actions>
+        <div ng-if="errorFlag">
+          <span class="errorMessage">{{errorMessage}}</span>
+        </div>
+      </div>
+
+     
+
+    </form>
+  </mat-card-content>
+</mat-card>

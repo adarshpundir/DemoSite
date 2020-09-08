@@ -1,0 +1,9 @@
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.color
+{
+    background-attachment: fixed;
+    background-color: aqua;
+}
+
+
